@@ -1,0 +1,48 @@
+<div class="text-center">
+<h1 id="titleBurger">Burger Time!</h1>
+<img src="../assets/img/burger.png" id = "burgerImg" alt = "Cartoon Burger Image">
+</div>
+<div class = "row">
+
+<div class = "col-sm-6">
+<div class = "jumbotron myjumbo">
+<h2 class="text-center"><u>Burgers Ready to be Devoured</u></h2>
+<ul class="burgerList">
+  {{#each burger}}
+    {{#unless devoured}}
+      <li><u><strong>{{burger_name}}</strong></u><button class="devourIt" value={{id}}>Devour It!</button></li>
+    {{/unless}}
+  {{/each}}
+</ul>
+</div>
+</div>
+
+<div class = "col-sm-6">
+<div class = "jumbotron myjumbo">
+<h2 class="text-center"><u>Burgers Devoured</u></h2>
+
+<ul class="burgerList">
+  {{#each burger}}
+    {{#if devoured}}
+     <li><u><strong>{{burger_name}}</strong></u></li>
+    {{/if}}
+  {{/each}}
+</ul>
+</div>
+</div>
+
+</div>
+
+<div class = "row">
+<div class = "col-sm-10 offset-sm-1" id="burgerNew">
+<h2><u>Add a new Burger</u></h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca"><strong>Burger Time:</strong></label>
+    <textarea class="form-control" id="burgerForm" rows="3"></textarea>
+  </div>
+  <button type="submit" id="newBurger">Add a Burger</button>
+</form>
+</div>
+</div>

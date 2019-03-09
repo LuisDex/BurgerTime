@@ -1,0 +1,54 @@
+.myjumbo{
+    background-color:#9c9591;
+    height: 100%;
+    border-style:inset;
+    border-color:orangered;
+    margin-left:10px;
+    margin-right:10px;
+}
+#burgerImg{
+  height: 200px;
+  width: 200px;
+}
+
+#titleBurger{
+    color: orangered;
+    text-shadow: 3px 2px black;
+    font-size:75px;
+}
+
+h2{
+    color:orangered;
+    text-shadow: 2px 1px black;
+
+}
+body{
+    background-image:url("../img/grill.jpg");
+    
+}
+
+.burgerList{
+
+margin-top:20px;
+}
+
+#burgerNew{
+    background-color:#9c9591;
+    height: 100%;
+    border-style:inset;
+    border-color:orangered;
+    margin-top: 10px;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+.devourIt{
+    border-style:inset;
+    border-color:orangered;
+    margin:5px;
+}
+#newBurger{
+    border-style:inset;
+    border-color:orangered;
+    margin:5px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Burger Time!!</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/burger_style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		{{{ body }}}
+
+		<script>
+			
+$("#newBurger").on("click",function(event){
+    event.preventDefault();
+		var newBurgerName = $("#burgerForm").val().trim();
+  if(newBurgerName != "")
+	{
+    var newBurger = {burger_name:newBurgerName, devoured:false};
+
+    $.ajax("api/burger", {type:"POST",data:newBurger}).then(function(){
+        console.log("Burger up!");
+        location.reload();
+    })
+  }
+});
+
+$(".devourIt").on("click",function(event){
+
+  var btnID = $(this).attr("value");
+  
+  $.ajax("api/burger/" + btnID, {type:"PUT",devoured:true}, btnID).then(function(){
+	  console.log("Mmmmmmm burger.....");
+	  location.reload();
+  })
+});
+		</script>
+	</body>
+</html>
